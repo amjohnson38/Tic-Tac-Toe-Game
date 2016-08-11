@@ -1,0 +1,281 @@
+* {
+	margin: 0;
+	padding: 0;
+  
+}
+
+body{
+  background-color:#5F6887;
+background-image: url("https://www.transparenttextures.com/patterns/circles.png");
+
+}
+
+h1 {
+  margin-top:5px;
+  margin-bottom:20px;
+  font-family:'Anton' sans-serif;
+  font-size:10vh;
+  font-weight:400;
+  text-align:center;
+  letter-spacing: 5px;
+  -webkit-text-stroke: 1px black;
+   color: white;
+   text-shadow:
+       3px 3px 0 #2B3A45,
+     -1px -1px 0 #2B3A45,  
+      1px -1px 0 #2B3A45,
+      -1px 1px 0 #2B3A45,
+       1px 1px 0 #2B3A45;
+       animation-duration: 3s;
+  animation-name: slidein;
+}
+
+  @keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+.btn {
+    margin: 4px;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+.btn-hot {
+background-color: #385F96;
+border-bottom:2px solid #2B3A45;
+width:40px;
+height:40px;
+font-weight:bold;
+font-size:20px;
+margin:20px;
+color:white;
+}
+
+.btn-hot:active{
+color: #fff;
+background-color: #385F96;
+border-top:2px solid #2B3A45;
+margin-top: 2px;
+}
+
+#playerSelection {
+  text-align: center;
+  width: 25%;
+  margin-top: 200px;
+  float: left;
+}
+h3{
+  color: navy;
+  font-weight:bold;
+font-size:25px;
+text-align: center;
+font-family: "Lato",sans-serif;
+}
+
+.popupContainer, #gameBoardContainer
+{
+  display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: center;
+  margin: 0;
+}
+.popupContainer{
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+}
+
+#content{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#gameBoardContainer{
+  flex-grow:1;
+}
+
+#gameboard{
+ background-color:#485789;
+  border:1px solid black;
+  -webkit-box-shadow: 1px 1px 21px 6px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 1px 21px 6px rgba(0,0,0,0.75);
+box-shadow: 1px 1px 21px 6px rgba(0,0,0,0.75);
+width: 50vh;
+
+}
+
+
+
+  .square {
+    float:left;
+    position: relative;
+    width: 30%;
+    height: 30%;
+    /*padding-bottom: 30%; /* = width for a 1:1 aspect ratio */
+    margin:1.66%;
+    background-color: white;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+    cursor:pointer;
+}
+
+#resetGameBox{
+      flex-direction: column;
+    display: flex;
+}
+
+
+.X {
+  background-color: #FB3953;
+  font-weight:bold;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1s; /* Firefox < 16 */
+        -ms-animation: fadein 1s; /* Internet Explorer */
+         -o-animation: fadein 1s; /* Opera < 12.1 */
+            animation: fadein 1s;
+}
+.X::before{
+content:"X";
+
+}
+ 
+
+.O {
+  background-color:lightblue;
+  font-weight:bold;
+  -webkit-animation: fadein 1s; 
+       -moz-animation: fadein 1s; 
+        -ms-animation: fadein 1s; 
+         -o-animation: fadein 1s; 
+            animation: fadein 1s; 
+            content: "O";
+}
+
+/*generates content in an element */
+.O::before{
+content:"O";
+}           
+
+.O,.X{
+  font-size: 500%;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+.slideDown{
+   animation: slideDown 4s; 
+   animation-fill-mode: forwards;
+}
+
+.slideUp{
+   animation: slideUp 2s; 
+   animation-fill-mode: forwards;
+}
+
+@keyframes slideDown {
+    from { top: -100%; }
+    to   { top: 0%; }
+}
+
+@keyframes slideUp {
+    from { top: 0%; }
+    to   { top: -100%; }
+}
+
+.popUp{
+  background: rgba(255,255, 255, 0.7);
+ padding: 1em 5em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius-: 5px;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+#endOfGameStatement{
+  color:navy;
+  font-weight:bold;
+}
+#reset{
+  font-size: 15px;
+  padding:10px;
+
+ /*
+ margin:20px;*/
+}
+#veil{
+  z-index: 2;
+  overflow: hidden;
+  margin: 0;
+  background-color:rgba(0,0, 0, 0.5);
+  position:fixed;
+  top:-50%;
+  bottom:0;
+  right:0;
+  left:0; 
+  pointer-events: none;
+}
+
+.fadeOut{
+   animation: fadeOut 2s; 
+   animation-fill-mode: forwards; /* keeps the animation from resetting after it runs*/
+}
+.fadeIn{
+   animation: fadeIn 2s; 
+   animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
